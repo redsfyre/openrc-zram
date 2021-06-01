@@ -1,0 +1,30 @@
+## Aşağıdaki yapılandırma eğer siz bir değişiklik yapmazsanız zram-init (https://github.com/vaeth/zram-init) paketi ile sistemde mevcut ram miktarı kadar zram oluşturmanızı sağlar
+
+load_on_start=yes
+unload_on_stop=yes
+
+num_devices=1
+
+type0=swap
+flag0=
+
+## Oluşturacağınız zram alanı miktarını burada mb cinsinden direkt olarak verebilirsiniz
+## Ya da sistemdeki ram miktarının yarısı kadar veya tamamı kadar zram alanı oluşturmak için aşağıda verdiğim komut dizilerini kullanabilirsiniz.
+
+## Spesifik bir değer için;
+#size0=512mb
+
+## Ram miktarı kadar bir alan için;
+size0=`LC_ALL=C free -m | awk '/^Mem:/{print int($2)}'`
+
+## Ram miktarının yarısı kadar bir alan için;
+#size0=`LC_ALL=C free -m | awk '/^Mem:/{print int($2/2)}'`
+
+mlim0=
+maxs0=1
+
+## Kullanılacak algoritmayı seçerken hız mı yoksa sıkıştırma boyutu mu istediğinize karar vermeniz gerekmekte
+## Hızlı bir sıkıştırma için lz4,
+## Yüksek sıkıştırma için zstd kullanabilirsiniz.
+algo0=lz4
+labl0=zram_swap
