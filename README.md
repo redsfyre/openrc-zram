@@ -12,8 +12,6 @@ Openrc sistemlerde zram yapılandırmalarına ait birkaç Türkçe rehber
 <br></br>
 Zaten biliyorsunuzdur ama servisi durdurmak için;
 
-`rc-service zram-init stop`, 
-
-devre dışı bırakmak için;
+`rc-service zram-init stop`, devre dışı bırakmak için;
 
 `rc-update delete zram-init boot` komutunu kullanabilirsiniz.
