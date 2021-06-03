@@ -9,6 +9,7 @@ Openrc sistemlerde zram yapılandırmalarına ait birkaç Türkçe rehber
 
 `rc-service zram-init start` komutuyla sistemi yeniden başlatmadan zram'i çalıştırabilirsiniz.
 
+<br></br>
 Zaten biliyorsunuzdur ama servisi durdurmak için;
 
 `rc-service zram-init stop`, 
